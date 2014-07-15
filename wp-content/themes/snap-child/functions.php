@@ -85,4 +85,14 @@ function get_cat_slug($cat_id) {
 //check for single category templates.
 add_filter('single_template', create_function('$t', 'foreach( (array) get_the_category() as $cat ) { if ( file_exists(STYLESHEETPATH . "/single-{$cat->slug}.php") ) return STYLESHEETPATH . "/single-{$cat->slug}.php"; } return $t;' ));
 
+function new_mime_types($mime_types){
+    //Creating a new array will add to the allowed filetypes
+    $mime_types = array(
+        'l3d' => 'model/vnd.layar.l3d',
+        'svg' => 'image/svg+xml'
+    );
+    return $mime_types;
+}
+add_filter('upload_mimes', 'new_mime_types', 1, 1);
+
 ?>
