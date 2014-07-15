@@ -255,7 +255,7 @@ if(function_exists("register_field_group"))
 						'append' => '',
 						'min' => '',
 						'max' => '',
-						'step' => '.001',
+						'step' => '.0001',
 					),
 					array (
 						'key' => 'field_5324ebc543bb2',
