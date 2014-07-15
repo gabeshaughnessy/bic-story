@@ -24,11 +24,11 @@ if(have_posts()) : while(have_posts()) : the_post();
                 $interactive = (isset($hotspot['layar_interactive'])?$hotspot['layar_interactive']:true);
                 $scrollable = (isset($hotspot['layar_scrollable'])?$hotspot['layar_scrollable']:false);
                 $layarSize = (isset($hotspot['layar_size'])?$hotspot['layar_size']:1);
-                $rotateX = (isset($hotspot['layar_rotate_x'])?$hotspot['layar_rotate_x']:0);
-                $rotateY = (isset($hotspot['layar_rotate_y'])?$hotspot['layar_rotate_y']:0);
-                $rotateZ = (isset($hotspot['layar_rotate_z'])? $hotspot['layar_rotate_z'] : 0);
+                $rotateX = (isset($hotspot['layar_rotate_x']) && $hotspot['layar_rotate_x'] ? "1" : "0");
+                $rotateY = (isset($hotspot['layar_rotate_y'] ) && $hotspot['layar_rotate_y'] ? "1" : "0");
+                $rotateZ = (isset($hotspot['layar_rotate_z']) && $hotspot['layar_rotate_z'] ? "1" : "0");
                 $rotateAngle = (isset($hotspot['layar_rotate_angle'])? $hotspot['layar_rotate_angle'] : 0);
-                $rotateRelative =  true;
+                $rotateRelative =  (isset($hotspot['layar_rotate_rel'])? $hotspot['layar_rotate_rel'] : false);
                 $translateX = (isset($hotspot['layar_translate_x'])?$hotspot['layar_translate_x']:0);
                 $translateY = (isset($hotspot['layar_translate_y'])?$hotspot['layar_translate_y']:0);
                 $translateZ = (isset($hotspot['layar_translate_z'])? $hotspot['layar_translate_z'] : 0);
@@ -54,13 +54,13 @@ if(have_posts()) : while(have_posts()) : the_post();
                             'z' => $translateZ,
                         ),
                         'rotate' => array(
-                            'rel' => false,
+                            'rel' => $rotateRelative,
                             'axis' => array(
-                                'x' => 0,
-                                'y' => 0,
-                                'z' => 1
+                                'x' => $rotateX,
+                                'y' => $rotateY,
+                                'z' => $rotateZ
                             ),
-                            'angle' => 45    
+                            'angle' => $rotateAngle   
                         ),
                         
                         'scale' => $layarScale
