@@ -24,5 +24,8 @@ remove_action( 'init', 'wp_admin_bar_init' );
             echo edge_suite_view();
 			echo '</div>';
           }
+          
+          	the_content();
+          
            ?>
 <?php endwhile; ?>
