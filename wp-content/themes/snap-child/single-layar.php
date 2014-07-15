@@ -54,7 +54,7 @@ if(have_posts()) : while(have_posts()) : the_post();
                             'z' => $translateZ,
                         ),
                         'rotate' => array(
-                            'rel' => true,
+                            'rel' => false,
                             'axis' => array(
                                 'x' => 0,
                                 'y' => 0,
