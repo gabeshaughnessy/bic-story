@@ -24,6 +24,11 @@ if(have_posts()) : while(have_posts()) : the_post();
                 $interactive = (isset($hotspot['layar_interactive'])?$hotspot['layar_interactive']:true);
                 $scrollable = (isset($hotspot['layar_scrollable'])?$hotspot['layar_scrollable']:false);
                 $layarSize = (isset($hotspot['layar_size'])?$hotspot['layar_size']:1);
+                $rotateX = (isset($hotspot['layar_rotate_x'])?$hotspot['layar_rotate_x']:0);
+                $rotateY = (isset($hotspot['layar_rotate_y'])?$hotspot['layar_rotate_y']:0);
+                $rotateZ = (isset($hotspot['layar_rotate_z'])? $hotspot['layar_rotate_z'] : 0);
+                $rotateAngle = (isset($hotspot['layar_rotate_angle'])? $hotspot['layar_rotate_angle'] : 0);
+                $rotateRelative = (isset($hotspot['layar_rotate_rel'])? $hotspot['layar_rotate_rel'] : 0);
                 $translateX = (isset($hotspot['layar_translate_x'])?$hotspot['layar_translate_x']:0);
                 $translateY = (isset($hotspot['layar_translate_y'])?$hotspot['layar_translate_y']:0);
                 $translateZ = (isset($hotspot['layar_translate_z'])? $hotspot['layar_translate_z'] : 0);
@@ -47,6 +52,11 @@ if(have_posts()) : while(have_posts()) : the_post();
                             'x' => $translateX,
                             'y' => $translateY,
                             'z' => $translateZ,
+                        ),
+                        "rotate" => array(  
+                          "rel" => $rotateRelative,    
+                          "axis" => array( "x" => $rotateX, "y" => $rotateY, "z" => $rotateZ ),
+                          "angle" => $rotateAngle  
                         ),
                         'scale' => $layarScale
                     ),  
