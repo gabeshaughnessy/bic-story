@@ -89,7 +89,8 @@ function new_mime_types($mime_types){
     //Creating a new array will add to the allowed filetypes
     $mime_types = array(
         'l3d' => 'model/vnd.layar.l3d',
-        'svg' => 'image/svg+xml'
+        'svg' => 'image/svg+xml',
+        'jpg' => 'image/jpeg'
     );
     return $mime_types;
 }

@@ -9,6 +9,8 @@ wp-content/advanced-cache.php
 wp-content/wp-cache-config.php
 wp-content/themes/snap/
 sitemap.xml
+license.txt
+readme.html
 *.log
 *.sass-cache
 wp-content/cache/
