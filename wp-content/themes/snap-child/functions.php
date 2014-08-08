@@ -90,7 +90,12 @@ function new_mime_types($mime_types){
     $mime_types = array(
         'l3d' => 'model/vnd.layar.l3d',
         'svg' => 'image/svg+xml',
-        'jpg' => 'image/jpeg'
+        'jpg' => 'image/jpeg',
+        'png' => 'image/png',
+        'gif' => 'image/gif',
+        'pdf' => 'application/pdf',
+        'mov' => 'video/quicktime',
+        'mpeg' => 'video/mpg'
     );
     return $mime_types;
 }
