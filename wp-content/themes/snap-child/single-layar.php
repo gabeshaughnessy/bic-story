@@ -32,7 +32,7 @@ if(have_posts()) : while(have_posts()) : the_post();
                 $translateX = (isset($hotspot['layar_translate_x'])?$hotspot['layar_translate_x']:0);
                 $translateY = (isset($hotspot['layar_translate_y'])?$hotspot['layar_translate_y']:0);
                 $translateZ = (isset($hotspot['layar_translate_z'])? $hotspot['layar_translate_z'] : 0);
-                $translateZ = ($is_android === true ? 0-$translateZ : $translateZ );
+               // $translateZ = ($is_android === true ? 0-$translateZ : $translateZ );
                 $layarScale = (isset($hotspot['layar_scale'])? $hotspot['layar_scale'] : 1);
 
                 $hotspots_output[$i] = array(
